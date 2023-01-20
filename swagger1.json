@@ -1,0 +1,96 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "v1",
+        "title": "ContractPodAi API v1.0"
+    },
+    "host": "clouduat.contractpod.com",
+    "basePath": "/cpaimt_api",
+    "schemes": [
+        "https"
+    ],
+	
+    "paths": {
+        "/api/{tenantname}/v{version}/activity/statuses": {
+            "get": {
+                "tags": [
+                    "Activity"
+                ],
+                "operationId": "Activity_GetActivityStatuses",
+                "consumes": [],
+                "produces": [
+                    "application/json",
+                    "text/json",
+                    "application/scim+json",
+                    "application/xml",
+                    "text/xml",
+                    "multipart/form-data"
+                ],
+                "parameters": [{
+                        "name": "requestorUsername",
+                        "in": "query",
+                        "required": true,
+                        "type": "string"
+                    }, {
+                        "name": "tenantname",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }, {
+                        "name": "version",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }, {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "access token",
+                        "required": true,
+                        "type": "string",
+                        "default": "Bearer "
+                    }
+                ],
+                "responses": {
+    "200": {
+      "description": "OK",
+      "content": {
+        "application/json": {
+          "example": {
+            "results": [
+              {
+                "abc": 20
+              }
+            ],
+            "totalCount": 69
+          },
+
+          "schema": {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "abc": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              },
+              "totalCount": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+                "security": [{
+                        "oauth2": []
+                    }
+                ]
+            }
+        }
+		}
