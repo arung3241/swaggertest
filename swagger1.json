@@ -17,6 +17,7 @@
 					"Activity"
 				],
 				"operationId": "Activity_GetActivityStatuses",
+				"description": "Get Activity Status",
 				"consumes": [],
 				"produces": [
 					"application/json",
