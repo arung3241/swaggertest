@@ -13,11 +13,11 @@
 	"paths": {
 		"/api/{tenantname}/v{version}/activity/statuses": {
 			"get": {
+				"description": "Returns all pets from the system that the user has access to",
 				"tags": [
 					"Activity"
 				],
 				"operationId": "Activity_GetActivityStatuses",
-				"description": "Get Activity Status",
 				"consumes": [],
 				"produces": [
 					"application/json",
@@ -53,10 +53,11 @@
 				"responses": {
 					"200": {
 						"description": "OK",
-
-
 						"schema": {
-							"$ref": "#/definitions/ContractPod.Product.Library.Models.V2.RolePermission.RolePermissionFilterResponse"
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/ContractPod.Product.Library.Models.V2.RolePermission.RolePermissionFilterResponse"
+							}
 						}
 
 
